@@ -29,6 +29,36 @@
 
     <!-- Template Stylesheet -->
     <link href="css/style.css" rel="stylesheet">
+
+    <script>
+        function sendMail(){
+            var name = document.getElementById("name").value;
+            var email = document.getElementById("email").value;
+            var subject = document.getElementById("subject").value;
+            var message = document.getElementById("message").value;
+
+            if(isEmpty(name) || isEmpty(email) || isEmpty(subject) || isEmpty(message)) {
+                if(isValidEmail(email)){
+                    console.log("Verified Successfully");
+                    console.log(name+" "+email+" "+ " "+ subject + " "+ message);
+                } else {
+                    console.log("Email verification failed");
+                }
+            } else {
+                console.log("verification failed");
+            }
+        }
+
+        const isEmpty = (str) => (!str?.length);
+
+        const isValidEmail = (email) => {
+            return String(email)
+                .toLowerCase()
+                .match(
+                    /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|.(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+                );
+        };
+    </script>
 </head>
 
 <body>
@@ -166,7 +196,7 @@
                                         </div>
                                     </div>
                                     <div class="col-12">
-                                        <button class="btn btn-primary w-100 py-3" type="submit">Send Message</button>
+                                        <button class="btn btn-primary w-100 py-3" type="submit" onclick="sendMail()">Send Message</button>
                                     </div>
                                 </div>
                             </form>
