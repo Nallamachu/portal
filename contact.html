@@ -37,8 +37,9 @@
             var subject = document.getElementById("subject").value;
             var message = document.getElementById("message").value;
             console.log(name+" "+email+" "+ " "+ subject + " "+ message);
-            if(isEmpty(name) || isEmpty(email) || isEmpty(subject) || isEmpty(message)) {
-                if(isValidEmail(email)){
+            if(isEmpty(name) && isEmpty(email) && isEmpty(subject) && isEmpty(message)) {
+                var valid = isValidEmail(email);
+                if(valid){
                     console.log("Verified Successfully");
                 } else {
                     console.log("Email verification failed");
@@ -48,7 +49,9 @@
             }
         }
 
-        const isEmpty = (str) => (str?.length);
+        function isEmpty(value){
+            return (value!=='' || value !==undefined || value.length > 0)?true:false;
+        }
 
         const isValidEmail = (email) => {
             return String(email)
