@@ -50,8 +50,7 @@
             if(isEmpty(name) && isEmpty(email) && isEmpty(subject) && isEmpty(message)) {
                 if(isValidEmail(email)){
                     emailjs.send("service_o8n3bib", "template_uglvpp7", {name, email, subject, message})
-                        .then(alert("Email Sent Successfully"));
-                    console.log("Verified Successfully");
+                        .then(console.log("Verified Successfully"));
                 } else {
                     console.log("Email verification failed");
                 }
