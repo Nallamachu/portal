@@ -52,10 +52,10 @@
             emailjs.init({
                 publicKey: "5HqkN95dRPLLkUGtR",
             });
-            const name = Document.getElementById("name").value
-            const email = Document.getElementById("email").value
-            const subject = Document.getElementById("subject").value
-            const message = Document.getElementById("message").value
+            const name = document.getElementById("name").value
+            const email = document.getElementById("email").value
+            const subject = document.getElementById("subject").value
+            const message = document.getElementById("message").value
             console.log(name+' '+email+' '+subject+' '+message)
             if(isEmpty(name) && isEmpty(email) && isEmpty(subject) && isEmpty(message)) {
                 if(isValidEmail(email)){
