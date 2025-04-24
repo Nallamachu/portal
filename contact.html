@@ -35,18 +35,27 @@
     </script>
 
     <script type="text/javascript">
-        // (function(){
-            
-        // })();
+        
+        function isEmpty(value){
+            return (value!=='' || value !==undefined || value.length > 0)?true:false;
+        }
+
+        const isValidEmail = (email) => {
+            return String(email)
+                .toLowerCase()
+                .match(
+                    /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|.(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+                );
+        };
 
         function sendMail(){
             emailjs.init({
                 publicKey: "5HqkN95dRPLLkUGtR",
             });
-            const name = document.getElementById("name").value
-            const email = document.getElementById("email").value
-            const subject = document.getElementById("subject").value
-            const message = document.getElementById("message").value
+            const name = Document.getElementById("name").value
+            const email = Document.getElementById("email").value
+            const subject = Document.getElementById("subject").value
+            const message = Document.getElementById("message").value
             console.log(name+' '+email+' '+subject+' '+message)
             if(isEmpty(name) && isEmpty(email) && isEmpty(subject) && isEmpty(message)) {
                 if(isValidEmail(email)){
@@ -60,17 +69,6 @@
             }
         }
 
-        function isEmpty(value){
-            return (value!=='' || value !==undefined || value.length > 0)?true:false;
-        }
-
-        const isValidEmail = (email) => {
-            return String(email)
-                .toLowerCase()
-                .match(
-                    /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|.(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
-                );
-        };
     </script>
 </head>
 
