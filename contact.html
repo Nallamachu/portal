@@ -59,7 +59,7 @@
             console.log(name+' '+email+' '+subject+' '+message)
             if(isEmpty(name) && isEmpty(email) && isEmpty(subject) && isEmpty(message)) {
                 if(isValidEmail(email)){
-                    emailjs.send("service_o8n3bib", "template_uglvpp7", {name, email, subject, message})
+                    emailjs.send("service_o8n3bib", "template_uglvpp7", {name, email, subject, message}, 'softifyo98@gmail.com')
                         .then(console.log("Verified Successfully"))
                 } else {
                     console.log("Email verification failed")
