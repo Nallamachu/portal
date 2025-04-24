@@ -42,25 +42,21 @@
         })();
 
         function sendMail(){
-            console.log('in sendMail')
-            document.addEventListener('DOMContentLoaded', function() {
-                console.log('in addEventListener')
-                var name = document.getElementById("yourname").value;
-                var email = document.getElementById("youremail").value;
-                var subject = document.getElementById("emailsubject").value;
-                var message = document.getElementById("emailmessage").value;
+            var name = document.getElementById("name").value;
+            var email = document.getElementById("email").value;
+            var subject = document.getElementById("subject").value;
+            var message = document.getElementById("message").value;
 
-                if(isEmpty(name) && isEmpty(email) && isEmpty(subject) && isEmpty(message)) {
-                    if(isValidEmail(email)){
-                        emailjs.send("service_o8n3bib", "template_uglvpp7", {name, email, subject, message})
-                            .then(console.log("Verified Successfully"));
-                    } else {
-                        console.log("Email verification failed");
-                    }
+            if(isEmpty(name) && isEmpty(email) && isEmpty(subject) && isEmpty(message)) {
+                if(isValidEmail(email)){
+                    emailjs.send("service_o8n3bib", "template_uglvpp7", {name, email, subject, message})
+                        .then(console.log("Verified Successfully"));
                 } else {
-                    console.log("verification failed");
+                    console.log("Email verification failed");
                 }
-            });
+            } else {
+                console.log("verification failed");
+            }
         }
 
         function isEmpty(value){
@@ -189,26 +185,26 @@
                                 <div class="row g-3">
                                     <div class="col-md-6">
                                         <div class="form-floating">
-                                            <input type="text" class="form-control" id="yourname" placeholder="Your Name">
-                                            <label for="yourname">Your Name</label>
+                                            <input type="text" class="form-control" id="name" placeholder="Your Name">
+                                            <label for="name">Your Name</label>
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-floating">
-                                            <input type="email" class="form-control" id="youremail" placeholder="Your Email">
-                                            <label for="youremail">Your Email</label>
+                                            <input type="email" class="form-control" id="email" placeholder="Your Email">
+                                            <label for="email">Your Email</label>
                                         </div>
                                     </div>
                                     <div class="col-12">
                                         <div class="form-floating">
-                                            <input type="text" class="form-control" id="emailsubject" placeholder="Subject">
-                                            <label for="emailsubject">Subject</label>
+                                            <input type="text" class="form-control" id="subject" placeholder="Subject">
+                                            <label for="subject">Subject</label>
                                         </div>
                                     </div>
                                     <div class="col-12">
                                         <div class="form-floating">
-                                            <textarea class="form-control" placeholder="Leave a message here" id="emailmessage" style="height: 150px"></textarea>
-                                            <label for="emailmessage">Message</label>
+                                            <textarea class="form-control" placeholder="Leave a message here" id="message" style="height: 150px"></textarea>
+                                            <label for="message">Message</label>
                                         </div>
                                     </div>
                                     <div class="col-12">
