@@ -42,7 +42,9 @@
         })();
 
         function sendMail(){
+            console.log('in sendMail')
             document.addEventListener('DOMContentLoaded', function() {
+                console.log('in addEventListener')
                 var name = document.getElementById("yourname").value;
                 var email = document.getElementById("youremail").value;
                 var subject = document.getElementById("emailsubject").value;
